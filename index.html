@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TopG Traders</title>
+
+    <link rel="shortcut icon" href="/public/favicon.ico" type="image/x-icon">
+
+    <!-- Razorpay -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+  <!-- Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <style>
+            body {
+
+
+  background-image: linear-gradient(to right bottom, #0b0b0e, #11111a, #141725, #161b31, #17203d);
+}
+
+
+* {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  color: white;
+
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+
+}
+
+/* banner */
+
+.banner-img {
+  width: 400px;
+  height: 400px;
+  object-fit: contain;
+}
+
+
+/* animation */
+.slide-in{
+  animation: slide-in  1s ease 1 normal forwards ;
+  
+}
+
+.slide-in-delay{
+  animation: slide-in  1s ease 0.1s 1 normal backwards ;
+  
+}
+
+.slide-in-delay-btn{
+  animation: slide-in  1s ease 0.2s 1 normal backwards ;
+  
+}
+
+.slide-in-delay-btch{
+  animation: slide-in  1s ease 0.3s 1 normal backwards ;
+  
+}
+
+@keyframes slide-in {
+  
+  0%{
+    transform: translateY(100px);
+    opacity: 0;
+
+  }
+  100%
+{
+
+}
+
+}
+
+/*  platform, timings, support border */
+
+.brdr {
+  border: 1px #F9F800 dashed;
+  background-color: #d9d9d912;
+}
+
+/* banner button */
+
+.btn {
+  background-image: linear-gradient(to right, #edcb42, #f4c149, #f9b751, #fbae59, #fba662);
+  color: white !important;
+  transition: all 0.3s ease !important;
+  padding: 15px 20px;
+}
+
+#crypto-btn
+{
+  border: 1px solid #edb342;
+  background-color: transparent;
+  color: white !important;
+  padding: 15px 20px;
+  transition: all 0.3s ease !important;
+  border-radius: 8px;
+}
+
+#crypto-btn span
+{
+  color: #edb342;
+  font-weight: 600;
+}
+
+.payment-buttons button
+{
+  width: 100%;
+  margin-top: 20px;
+}
+
+
+.btn:hover{
+  background-image: linear-gradient(to left, #edcb42, #f4c149, #f9b751, #fbae59, #fba662);
+}
+
+/* icon */
+
+.icon {
+  font-size: 50px;
+}
+
+/* headline */
+
+.banner-headline {
+  margin-bottom: 30px;
+
+}
+
+/* batch */
+.offerbatch {
+  background-color: #edb44252;
+  border: 1px #edb342 solid;
+  padding: 4px 8px;
+  width: 200px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-radius: 0px 20px;
+      font-weight: 400 !important;
+    opacity: 1.6;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+
+
+/* batch button */
+
+.batch-btn {
+
+  color: #ffffff;
+  border: 1px #edb342 solid;
+  background-color: transparent;
+  width: 200px;
+  border-radius: 24px;
+  padding: 8px;
+  transition: all 0.3ss ease !important;
+}
+
+.batch-btn:hover{
+  background-image: linear-gradient(to right, #edcb42, #f4c149, #f9b751, #fbae59, #fba662);
+ color: white;
+ 
+}
+
+.cryptooffer
+{
+      padding: 10px 20px;
+    color: black;
+}
+
+.cryptooffer span
+{
+      font-weight: 600;
+      color: #000;
+}
+
+.batchcontainer
+{
+  background: linear-gradient(to left, #edcb42, #f4c149, #f9b751, #fbae59, #fba662);
+  padding: 0px;
+  border-radius: 24px;
+  margin-bottom: 30px;
+}
+
+.batch-brdr {
+  border: 1px rgba(255, 255, 255, 0.256) solid;
+  border-radius: 24px;
+  padding: 35px 35px 20px 35px;
+  background-color: #222431;
+}
+
+
+iframe{
+  
+  border-radius: 20px ;
+  box-shadow: 0px 0px 24px  #edb44288;
+}
+
+/* courses */
+
+.courses{
+  background-color: #d9d9d912;
+  border: 1px rgba(255, 255, 255, 0.224) solid !important;
+}
+
+.brdr-bottom{
+  border-bottom: 1px rgba(255, 255, 255, 0.224) solid !important;
+   
+}
+/* footer */
+
+footer{
+  background-color: rgba(0, 0, 0, 0.379) ;
+}
+
+    /* Scroll Animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .logo {
+        font-size: 2rem;
+      }
+
+      .courses-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-section {
+        gap: 20px;
+      }
+
+      .stat-number {
+        font-size: 2rem;
+      }
+
+      .payment-form {
+        margin: 20px;
+        padding: 30px 20px;
+      }
+    }
+
+        .payment-form {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 40px;
+      margin: 40px auto;
+      text-align: center;
+      display: none;
+      max-width: 500px;
+      animation: fadeInUp 0.5s ease-out;
+    }
+
+    .payment-form.show {
+      display: block;
+    }
+
+    #only-contact
+    {
+      max-width: 400px;
+      margin: 40px auto;
+    }
+
+    
+    .selected-course-info {
+      background: rgba(0, 212, 255, 0.1);
+      border: 1px solid rgba(0, 212, 255, 0.3);
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+
+    .selected-course-info h3 {
+      color: #DCC519;
+      margin-bottom: 10px;
+    }
+
+    .form-group {
+      margin: 20px 0;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      color: #ffffff;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-color: #DCC519;
+      box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
+    }
+
+    .form-group input::placeholder {
+      color: #888;
+    }
+
+    .batchprice
+    {
+      font-size: 26px;
+      font-weight: 500;
+      color: #ffffff;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    .batchprice span
+    {
+      text-decoration: line-through;
+      color: #888888;
+      margin-right: 10px;
+      font-weight: 400;
+      font-size: 20px;
+    }
+
+    .batchtime
+    {
+    
+    border: 1px solid #6c6c6c;
+    margin: 0px;
+    padding: 8px;
+    align-items: center;
+    border-radius: 8px;
+    margin-bottom: 20px;
+
+    }
+
+    .batchtime p
+    {
+      margin-bottom: 0;
+    }
+
+    .whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  background-color: #1ebc57;
+}
+.whatsapp-float img {
+  width: 32px;
+  height: 32px;
+}
+
+.tooltip {
+  visibility: hidden;
+  width: max-content;
+  max-width: 140px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 5px 8px;
+  border-radius: 4px;
+  position: absolute;
+  right: 70px; /* Position tooltip to the left of the button */
+  bottom: 50%;
+  transform: translateY(50%);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 14px;
+}
+
+.whatsapp-float:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.contact-card {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  animation: fadeInUp 0.5s ease-out;
+  box-shadow: 0px 0px 15px rgba(237, 180, 66, 0.3);
+}
+.contact-card h4 {
+  color: #edb342;
+}
+.contact-card ul li {
+  font-size: 16px;
+}
+
+.cryptocontact
+{
+    background: transparent;
+    border: 1px solid;
+    border-color: white;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 9px;
+    padding: 15px 25px;
+    font-size: 25px;
+    text-align: center;
+    display: block;
+    margin-top: 20px !important;
+}
+
+.cryptocontact:hover
+{
+  transform: translateY(-5px);
+  transition: all 0.3s ease-in-out;
+  border: 1px solid #edb342;
+}
+
+.powered-by {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 6px;
+  margin-top: 6px;
+  font-size: 12px;
+  color: #aaa;
+  opacity: 0.8;
+}
+
+.powered-by span
+{
+  display: block;
+  margin-top: 2px;
+  opacity: 0.5 ;
+}
+
+.razorpay-logo {
+  height: 16px;
+  width: auto;
+  vertical-align: middle;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+}
+
+.intro-section{
+  overflow: hidden;
+  position: relative;
+}
+
+#myVideo
+{
+  position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.1;
+}
+
+.logo-container
+{
+  z-index: 3;
+  position: relative;
+}
+
+.image-gallery
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.image-gallery div
+{
+  width: 100%;
+  border-radius: 10px;
+  max-height: 300px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.image-gallery img, .image-gallery video
+{
+  width: 100%;
+  cursor: pointer;
+}
+
+/* Lightbox Modal Styles */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  animation: fadeIn 0.3s ease;
+}
+
+.lightbox-content {
+  position: relative;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1000px;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-content img,
+.lightbox-content video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media(min-width: 992px)
+{
+  .border-lg-start
+  {
+    border-left: 1px solid;
+  }
+
+  .border-lg-end
+  {
+    border-right: 1px solid;
+  }
+
+}
+
+@media (max-width: 600px){
+  .banner-img
+  {
+    height: auto;
+    width: 100%;
+    padding-top: 30px;
+  }
+
+  .icon {
+  font-size: 2em;
+}
+
+.banner-headline
+{
+  font-size: calc(2em + .3vw);
+  padding-top: 20px;
+}
+#myVideo
+{
+  display: none;
+}
+.logo-container
+{
+  background-color: #000;
+  margin-top: 0;
+}
+.batchprice
+{
+  display: flex;
+  flex-direction: column;
+  font-size: 22px;
+}
+.course-card
+{
+  padding: 35px 12px 12px 12px;
+}
+
+.course-card h5
+{
+  font-size: 20px;
+  font-weight: bold;
+}
+.course-card>div>p
+{
+  font-size: 12px;
+  margin-bottom: 15px !important;
+}
+
+.cryptooffer
+{
+  font-size: 12px;
+}
+.offerbatch
+{
+  font-size: 12px;
+}
+.payment-form
+{
+  padding: 15px;
+}
+.cryptocontact
+{
+  font-size: 20px;
+}
+.contact-card
+{
+  padding: 20px;
+}
+.pay-btn
+{
+  font-size: 15px;
+}
+}
+
+        </style>
+</head>
+
+<body>
+<div class="intro-section">
+  <video autoplay muted loop id="myVideo">
+  <source src="/public/assets/video1.mp4" type="video/mp4">
+</video>
+    <!-- logo -->
+    <div class="container text-uppercase logo-container">
+        <div class="row w-100 pb-lg-5 pb-3 mx-auto mt-lg-5 mt-0 pt-3 pt-lg-0 d-flex justify-content-start align-items-center">
+            <div class="col-lg-6 px-0 d-flex justify-content-start align-items-center ">
+
+
+
+                <img class=" logo me-3 rounded " src="Images/logo.png" alt="">
+
+                <h4 style="margin: 0px;">topg traders</h4>
+
+            </div>
+        </div>
+    </div>
+ 
+    <!-- banner -->
+    <div class="container mb-lg-5 pb-lg-5 ">
+        <div class="row w-100 pb-5 slide-in mx-auto align-items-center d-flex justify-content-between">
+            <div class="col-lg-6">
+                <h1 class="text-uppercase banner-headline fw-bold">Learn SMC trading</h1>
+                <p class="fw-normal slide-in-delay  " style="margin-bottom: 30px;">Structured, practical, and hands-on learning journey
+                    designed for beginners and intermediate traders
+                    who want to master Smart Money Concepts (SMC) and build strong trading skills.</p>
+                <a href="#availbatches" class="btn btn-lg fw-medium text-capitalize slide-in-delay-btn">enroll now</a>
+            </div>
+
+            <div class="col-lg-4 ">
+                <img class="banner-img mx-auto" src="Images/atul.png" alt="">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- platform, timings, support -->
+
+    <div class="container  mt-5 pb-5 text-center">
+        <div class="row w-100 mx-auto  brdr slide-in-delay-btch p-2 py-3 rounded-5  align-items-center justify-content-center">
+            <div class="col-lg-4 col-12 py-lg-5 py-2">
+                <div>
+                    <div>
+                        <h1 class="icon"><i class="fa-solid fa-video" style="color: #edb342;"></i></h1>
+                    </div>
+                    <h4 class="pt-2" >zoom live classes</h4>
+                </div>
+
+            </div>
+            <div class="col-lg-4 col-12 py-lg-5 py-2 border-lg-end border-lg-start">
+                <div>
+                    <h1 class="icon"><i class="fa-regular fa-calendar-days" style="color: #edb342;"></i></h1>
+                </div>
+                <h4 class="pt-2" >25 days ( 14 sessions )</h4>
+            </div>
+            <div class="col-lg-4 col-12 py-lg-5 py-2">
+                <div>
+                    <h1 class="icon"><i class="fa-solid fa-headset" style="color: #edb342;"></i></h1>
+                </div>
+                <h4 class="pt-2" >1 Months doubt solving support </h4>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- batches -->
+
+    <div id="availbatches" class="container text-uppercase text-center mt-5 mb-4 py-5">
+        <div class="row w-100 mx-auto justify-content-center align-items-center">
+            <div class="col-6">
+                <h2>available batches</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="container text-capitalize mb-5 pb-5 ">
+        <div id="batches-container" class="row mx-auto  px-lg-5 w-100 align-items-center justify-content-around">
+             <!-- Batches will be loaded dynamically here -->
+        </div>
+    </div>
+
+    <!-- Payment Form -->
+<div class="payment-form" id="payment-form">
+  <div class="selected-course-info" id="selected-course-info">
+    <h3 id="selected-course-title">Selected Course</h3>
+    <p id="selected-course-desc">
+      Please fill in your details to start your trading journey
+    </p>
+  </div>
+
+  <!-- Form Inputs -->
+  <form id="payment-details">
+    <div id="form-fields">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          placeholder="Enter your full name"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          placeholder="Enter your email address"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          required
+          placeholder="Enter your phone number"
+        />
+      </div>
+    </div>
+
+    <!-- Payment Buttons -->
+    <div class="form-group text-center payment-buttons">
+      <button type="submit" class="pay-btn btn" id="pay-btn">
+        <i class="fas fa-rocket"></i>Pay Securely (Card, UPI, Wallet)
+      </button>
+      <div class="powered-by">
+        <span>Powered by </span>
+      <img
+        src="https://d6xcmfyh68wv8.cloudfront.net/newsroom-content/uploads/2021/02/white-1536x327.png"
+        alt="Powered by Razorpay"
+        class="razorpay-logo"
+      />
+    </div>
+
+      <button type="button" class="pay-btn mt-3" id="crypto-btn">
+        <i class="fas fa-coins"></i> Pay with Crypto <span style="display: none;">(20% Discount)</span>
+      </button>
+    </div>
+  </form>
+
+  <!-- Beautiful Crypto Contact Card -->
+  <div id="crypto-contact" style="display:none;">
+    <div class="contact-card">
+      <h4 class="mb-3">Contact Our Team for Crypto Payments</h4>
+      <!-- <p class="fw-light mb-4">Get 20% more discount on all courses. 🚀</p> -->
+        <a  href="https://wa.me/919921916355?text=Hi%20there!%20I'd%20like%20to%20make%20a%20payment%20using%20crypto.%20Could%20you%20please%20guide%20me%3F" class="mb-2 cryptocontact">
+          <i class="fa-brands fa-whatsapp text-success"></i>
+           +91 99219 16355
+        </a>
+      <p style="opacity: 0.5;" class="mt-3">
+        <i class="fa-solid fa-lock text-success"></i> Safe & secure transaction
+      </p>
+    </div>
+  </div>
+</div>
+
+<div id="only-contact" style="display:none;">
+    <div class="contact-card">
+      <h4 class="mb-3">Contact Our Team for Payments</h4>
+      <!-- <p class="fw-light mb-4">Get 20% more discount on all courses. 🚀</p> -->
+        <a  href="https://wa.me/919921916355?text=Hi%20there!%20I'd%20like%20to%20make%20a%20payment.%20Could%20you%20please%20guide%20me%3F" class="mb-2 cryptocontact">
+          <i class="fa-brands fa-whatsapp text-success"></i>
+           +91 99219 16355
+        </a>
+      <p style="opacity: 0.5;" class="mt-3">
+        <i class="fa-solid fa-lock text-success"></i> Safe & secure transaction
+      </p>
+    </div>
+  </div>
+
+   <!-- gallery -->
+
+   <div class="container text-uppercase text-center mt-5 mb-4 py-5">
+    <div class="row w-100 mx-auto justify-content-center align-items-center">
+        <div class="col-6">
+            <h2>Image Gallery</h2>
+        </div>
+    </div>
+    <div class="image-gallery">
+        <div><img src="/Images/eventimage1.webp" alt="eventimage1"></div>
+        <div><video autoplay muted><source src="Images/video1.mp4" type="video/mp4"></video></div>
+        <div><img src="Images/eventimage2.webp" alt="eventimage2"></div>
+        <div><img src="Images/eventimage3.webp" alt="eventimage3"></div>
+        <div><video autoplay muted><source src="Images/video2.mp4" type="video/mp4"></video></div>
+    </div>
+</div>
+
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox">
+      <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+      <div class="lightbox-content">
+          <img id="lightboxImage" src="" alt="Gallery Image">
+          <video id="lightboxVideo" controls style="display: none;">
+              <source id="lightboxVideoSource" src="" type="video/mp4">
+              Your browser does not support the video tag.
+          </video>
+      </div>
+  </div>
+
+    <!-- binance accout -->
+
+    <div class="container text-uppercase text-center mt-5 py-5">
+        <div class="row w-100 mx-auto pt-5 justify-content-center align-items-center">
+            <div class="col-6">
+                <h2>how to open binance account</h2>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container text-capitalize mb-5 pb-5 mt-3">
+        <div class="row w-100 mx-auto justify-content-center align-items-center">
+            <div class="col-lg-6 d-flex justify-content-center">
+
+                <!-- insert youtube video link -->
+
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/OSaETd_G0HY?si=DceDOlGjggCM8p-G"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- courses -->
+
+    <div class="container text-capitalize  my-lg-5 py-5">
+
+
+        <div class="row w-100 py-5 mx-auto text-center justify-content-center align-items-center">
+            <div class="col-6 text-uppercase">
+                <h2>COURSE DETAILS</h2>
+            </div>
+        </div>
+
+        <div class="row mx-auto w-100 pt-5 courses rounded-4 align-items-center text-capitalize text-start  ">
+            <div class="col-12 px-5 pb-4  brdr-bottom">
+                <h4>Basics of SMC Trading ( Part 1 )</h4>
+                <p class="text-secondary fw-medium">Introduction to Trading , Major Participant , how to use trading
+                    software , Pips , Spread, Currency
+                    Corelation</p>
+
+            </div>
+            <div class="col-12 px-5 py-4 brdr-bottom ">
+                <h4>Basics of SMC Trading ( Part 2 )</h4>
+                <p class="text-secondary fw-medium"> Major types of Analysis , basics of candlestick types of trend ,
+                    Risk Management</p>
+
+            </div>
+
+            <div class="col-12 px-5 py-4 brdr-bottom ">
+                <h4>Structure & SMC Levels Markings</h4>
+                <p class="text-secondary fw-medium"> 123 method / ICI method / Trend Joining Levels </p>
+
+            </div>
+            <div class="col-12 px-5 py-4 brdr-bottom ">
+                <h4>Change of Character</h4>
+                <p class="text-secondary fw-medium"> RBS, SBR, QML, DT, DB Levels </p>
+
+            </div>
+            <div class="col-12 px-5 py-4 brdr-bottom ">
+                <h4>One Candle Retracement & Double Change of Character</h4>
+
+
+            </div>
+            <div class="col-12 px-5 py-4 brdr-bottom ">
+                <h4>What is Internal & External Structure Markings & its levels</h4>
+
+            </div>
+            <div class="col-12 px-5 py-4 brdr-bottom ">
+                <h4>SMC Concepts (part 1)</h4>
+                <p class="text-secondary fw-medium">Supply & Demand / Orderblocks / Breakerblock</p>
+
+            </div>
+            <div class="col-12 px-5 py-4 brdr-bottom ">
+                <h4>SMC Concepts (part 2)</h4>
+                <p class="text-secondary fw-medium">IPDA ,FVG ,Imbalance ,Inefficiency</p>
+
+            </div>
+            <div class="col-12 px-5 py-4 brdr-bottom ">
+                <h4>Top Down Analysis( Higher to Lower Timeframe)</h4>
+            </div>
+            <div class="col-12 px-5 py-4 brdr-bottom ">
+                <h4> SMC Entry Models & Aggressive Entries</h4>
+                <p class="text-secondary fw-medium">Price Reversals/ Inducement / Liquidity</p>
+            </div>
+            <div class="col-12 px-5 py-4 brdr-bottom ">
+                <h4> Putting it all together (Revision)</h4>
+            </div>
+            <div class="col-12 px-5 py-4   ">
+                <h4>How to Master trading psychology</h4>
+            </div>
+        </div>
+
+        <!-- terms & conditions  -->
+
+        <div
+            class="row brdr w-100 mx-auto rounded-4  p-2 py-4 mt-4 text-center align-items-center justify-content-center">
+            <div class="col-lg-4       ">
+                <div>
+                    <h4 class=" fs-2"><i class="fa-solid fa-video-slash" style="color: #ffffff;"></i></h4>
+                </div>
+                <h6 class="mx-3 mt-2 fs-5 fw-normal">Recording will not be provided!</h6>
+            </div>
+            <div class="col-lg-4  border-lg-end border-lg-start   ">
+                <div>
+                    <h4 class=" fs-2"><i class="fa-regular fa-file-lines" style="color: #ffffff;"></i></h4>
+                </div>
+                <h6 class="mx-3 mt-2 fs-5 fw-normal">Terms & Conditions Applied*</h6>
+            </div>
+            <div class="col-lg-4     ">
+                <div>
+                    <h4 class=" fs-2"><i class="fa-solid fa-dollar-sign" style="color: #ffffff;"></i></h4>
+                </div>
+                <h6 class="mx-3 mt-2 fs-5 fw-normal">No Refunds!</h6>
+            </div>
+        </div>
+
+
+
+
+    </div>
+    <footer class="p-4 ">
+        <div class="container text-center text-uppercase">
+            <div class="row w-100 mx-auto">
+                <div class="col-lg-4 mx-auto">
+                    <p class="fw-light fs-6 m-0">© 2025 topg traders | All Rights Reserved</p>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Support -->
+<a
+  href="https://wa.me/919921916355?text=Hi!%20I'm%20looking%20for%20some%20support%20regarding%20the%20course.%20Can%20you%20guide%20me%3F"
+  class="whatsapp-float"
+  target="_blank"
+  aria-label="Chat on WhatsApp"
+>
+<span class="tooltip">WhatsApp Support</span>
+  <img
+    src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+    alt="WhatsApp"
+  />
+</a>
+
+
+    <script>
+   
+      let selectedCourse = null;
+      let batchesData = [];
+
+      function selectCourse(batchId) {
+        const batch = batchesData.find(b => b.id === parseInt(batchId));
+        if (!batch) {
+            console.error('Batch not found for ID:', batchId);
+            return;
+        }
+
+        // Remove selection from all cards
+        document.querySelectorAll('.course-card').forEach(card => {
+            card.classList.remove('selected');
+        });
+
+        // Select the clicked card
+        const selectedCard = document.querySelector(`.course-card[data-batch-id='${batchId}']`);
+        if (selectedCard) {
+            selectedCard.classList.add('selected');
+        }
+
+        // Set selected course
+        selectedCourse = batch;
+
+        // Update course info
+        const courseTitle = document.getElementById('selected-course-title');
+        const courseDesc = document.getElementById('selected-course-desc');
+
+        courseTitle.textContent = batch.name;
+        // courseDesc.textContent = batch.description || 'Please fill in your details to start your trading journey';
+
+        // Show payment form
+
+         const paymentForm = document.getElementById('payment-form');
+        if (paymentForm) {
+            paymentForm.classList.add('show');
+
+            // Scroll to payment form
+            paymentForm.scrollIntoView({ behavior: 'smooth' });
+        }
+
+    }
+
+    function handlePaymentSuccess(response) {
+      // Redirect to success page with course info
+      window.location.href = `/success.html?batch_id=${selectedCourse.id}&payment_id=${response.razorpay_payment_id}`;
+    }
+
+    async function createRazorpayOrder(name, email, phone) {
+      if (!selectedCourse) {
+        alert('Please select a batch first.');
+        return;
+      }
+      try {
+        // Show loading state
+        const payBtn = document.getElementById('pay-btn');
+        payBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+        payBtn.disabled = true;
+
+        // First, create order on your backend
+        const response = await fetch('/create-order', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            batchId: selectedCourse.id,
+            name: name,
+            email: email,
+            phone: phone,
+            amount: selectedCourse.price * 100
+          })
+        });
+
+        const orderData = await response.json();
+        
+        if (orderData.success) {
+          // Open Razorpay checkout
+          const options = {
+            key: orderData.key_id,
+            amount: orderData.amount,
+            currency: orderData.currency,
+            name: 'TopG Traders',
+            description: `${selectedCourse.name} Trading Course`,
+            order_id: orderData.order_id,
+            prefill: {
+              name: name,
+              email: email,
+              contact: phone
+            },
+            handler: function(response) {
+              // Payment successful
+              handlePaymentSuccess(response);
+            },
+            theme: {
+              color: '#DCC519'
+            }
+          };
+
+          const rzp = new Razorpay(options);
+          rzp.open();
+        } else {
+          alert('Error creating order: ' + orderData.error);
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Error creating order. Please try again.');
+      } finally {
+        // Reset button state
+        const payBtn = document.getElementById('pay-btn');
+        payBtn.innerHTML = '<i class="fas fa-rocket"></i> Start Trading Journey';
+        payBtn.disabled = false;
+      }
+    }
+
+    async function fetchAndRenderBatches() {
+        try {
+            const response = await fetch('/api/public-batches');
+            if (!response.ok) {
+                throw new Error('Failed to fetch batches');
+            }
+            const batches = await response.json();
+            batchesData = batches;
+            const container = document.getElementById('batches-container');
+            if(batches.length === 0) {
+                container.innerHTML = '<p class="text-center">No active batches available at the moment. Please check back later.</p>';
+                return;
+            }
+            container.innerHTML = batches.map(batch => `
+                                <div class="batchcontainer col-lg-5">
+                <div data-batch-id="${batch.id}" class="course-card batch-brdr position-relative"">
+                    <div class="flex-column">
+                        <h5 class="h3 mb-3"><span>${batch.name}</span></h5>
+                        <button class="offerbatch mb-3 text-capitalize fw-medium">Limited time offer!</button>
+                        <div class="d-flex align-items-center batchtime">
+                            <i class="fa-regular fa-calendar-days h4 mb-0" style="color: #ffffff; margin-right: 10px;"></i>
+                            <p class="fw-normal" style="color: #edb342;">Starts: ${batch.start_date ? new Date(batch.start_date).toLocaleDateString() : 'TBA'}</p>
+                            <p class="fw-normal" style="margin-left: 20px; color: #edb342;">${batch.schedule_time || 'Flexible Timing'}</p>
+                        </div>
+                        <p class="mb-4 fw-light">${batch.description || ''}</p>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="batchprice" ><span>₹20000</span>₹${batch.price}</div>
+                    <button class="batch-btn fw-bold text-capitalize enrollbtn">enroll now</button>
+                    </div>
+                    </div>
+                    <div class="cryptooffer">For crypto payments contact on WhatsApp</div>
+                </div>
+            `).join('');
+
+            // Add event listeners after rendering
+            document.querySelectorAll('.course-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    const batchId = this.getAttribute('data-batch-id');
+                    selectCourse(batchId);
+                });
+            });
+
+        } catch (error) {
+            console.error('Error fetching batches:', error);
+            document.getElementById('batches-container').innerHTML = '<p class="text-center">Could not load batches. Please try again later.</p>';
+        }
+    }
+
+    // Initialize event listeners when DOM is loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      fetchAndRenderBatches();
+
+      // Handle form submission
+      const form = document.getElementById('payment-details');
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          if (!selectedCourse) {
+            alert('Please select a course first!');
+            return;
+          }
+          
+          const formData = new FormData(this);
+          const name = formData.get('name');
+          const email = formData.get('email');
+          const phone = formData.get('phone');
+          
+          // Create Razorpay order with course information
+          createRazorpayOrder(name, email, phone);
+        });
+      }
+
+      // Add scroll animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, observerOptions);
+
+      // Observe elements for animation
+      document.querySelectorAll('.course-card, .stat-item, .quote-section').forEach(el => {
+        el.classList.add('fade-in');
+        observer.observe(el);
+      });
+    });
+
+    // document.querySelectorAll(".batch-btn, .btn").forEach(btn => {
+    //   btn.addEventListener("click", (e) => {
+    //     e.preventDefault();
+    //     document.getElementById("paymentForm").classList.add("show");
+    //     // Example: update batch info
+    //     document.getElementById("selectedBatch").innerText = "Trading - Evening Batch";
+    //     document.getElementById("selectedPrice").innerText = "₹18000";
+    //   });
+    // });
+
+    // // Handle form + Razorpay
+    // document.getElementById("enrollForm").addEventListener("submit", async (e) => {
+    //   e.preventDefault();
+
+    //   const name = document.getElementById("studentName").value;
+    //   const email = document.getElementById("studentEmail").value;
+    //   const phone = document.getElementById("studentPhone").value;
+
+    //   // Call your backend API to create order
+    //   const order = await fetch("/create-order", {
+    //     method: "POST",
+    //     headers: { "Content-Type": "application/json" },
+    //     body: JSON.stringify({ amount: 18000 * 100 }) // in paise
+    //   }).then(res => res.json());
+
+    //   var options = {
+    //     "key": "YOUR_RAZORPAY_KEY", // Replace with your key
+    //     "amount": order.amount,
+    //     "currency": "INR",
+    //     "name": "TopG Traders",
+    //     "description": "Trading Enrollment",
+    //     "order_id": order.id,
+    //     "handler": function (response) {
+    //       // Send confirmation to backend for SMTP email
+    //       fetch("/payment-success", {
+    //         method: "POST",
+    //         headers: { "Content-Type": "application/json" },
+    //         body: JSON.stringify({
+    //           name, email, phone,
+    //           paymentId: response.razorpay_payment_id,
+    //           orderId: response.razorpay_order_id
+    //         })
+    //       });
+    //       alert("Payment successful! Confirmation sent to email.");
+    //     },
+    //     "prefill": { name, email, contact: phone },
+    //     "theme": { "color": "#edcb42" }
+    //   };
+    //   var rzp1 = new Razorpay(options);
+    //   rzp1.open();
+    // });
+document.getElementById("crypto-btn").addEventListener("click", function () {
+  document.getElementById("form-fields").style.display = "none";
+  document.getElementById("crypto-btn").style.display = "none";
+  document.getElementById("crypto-contact").style.display = "block";
+});
+
+document.getElementById("pay-btn").addEventListener("click", function () {
+  document.getElementById("form-fields").style.display = "block";
+  document.getElementById("crypto-btn").style.display = "block";
+  document.getElementById("crypto-contact").style.display = "none";
+});
+
+// Lightbox functionality for gallery
+let currentSlide = 0;
+const galleryItems = [
+  '/public/assets/eventimage1.webp',
+  '/public/assets/video1.mp4',
+  '/public/assets/eventimage2.webp',
+  '/public/assets/eventimage3.webp',
+  '/public/assets/video2.mp4'
+];
+
+function openLightbox(index) {
+  currentSlide = index;
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImage = document.getElementById('lightboxImage');
+  const lightboxVideo = document.getElementById('lightboxVideo');
+  const lightboxVideoSource = document.getElementById('lightboxVideoSource');
+
+  const item = galleryItems[index];
+
+  if (item.endsWith('.mp4')) {
+    // It's a video
+    lightboxImage.style.display = 'none';
+    lightboxVideo.style.display = 'block';
+    lightboxVideoSource.src = item;
+    lightboxVideo.load();
+  } else {
+    // It's an image
+    lightboxImage.style.display = 'block';
+    lightboxVideo.style.display = 'none';
+    lightboxImage.src = item;
+  }
+
+  lightbox.style.display = 'block';
+  document.body.style.overflow = 'hidden'; // Prevent background scrolling
+}
+
+function closeLightbox() {
+  const lightbox = document.getElementById('lightbox');
+  const lightboxVideo = document.getElementById('lightboxVideo');
+
+  lightbox.style.display = 'none';
+  lightboxVideo.pause(); // Pause video when closing
+  document.body.style.overflow = 'auto'; // Restore background scrolling
+}
+
+// Close modal when clicking outside of it
+window.onclick = function(event) {
+  const lightbox = document.getElementById('lightbox');
+  if (event.target == lightbox) {
+    closeLightbox();
+  }
+}
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    closeLightbox();
+  }
+});
+
+// Initialize gallery click events
+document.addEventListener('DOMContentLoaded', function() {
+  const galleryDivs = document.querySelectorAll('.image-gallery div');
+  galleryDivs.forEach((div, index) => {
+    div.addEventListener('click', function() {
+      openLightbox(index);
+    });
+
+    // Add hover effects
+    div.addEventListener('mouseenter', function() {
+      this.style.transform = 'scale(1.05)';
+      this.style.transition = 'transform 0.3s ease';
+    });
+
+    div.addEventListener('mouseleave', function() {
+      this.style.transform = 'scale(1)';
+    });
+  });
+});
+
+  </script>
+</body>
+</html>
